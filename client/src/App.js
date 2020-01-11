@@ -12,7 +12,7 @@ class App extends Component {
   getData = () => {
     axios.get('/messages')
     .then(response => {
-      this.setState({ sender: response.data[0].sender })
+      this.setState({ sender: response.data.name})
       console.log(response)
       console.log(this.state)
     })

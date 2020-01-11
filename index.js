@@ -15,6 +15,9 @@ connection.once('open', () => {
 const messagesRouter = require('./routes/messages');
 app.use('/messages', messagesRouter);
 
+const messagesRouter2 = require('./routes/messages2');
+app.use('/messages2', messagesRouter2);
+
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 

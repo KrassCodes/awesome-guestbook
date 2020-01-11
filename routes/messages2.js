@@ -3,7 +3,7 @@ let Messages = require('../models/messages.model');
 
 router.route('/').get((req, res) => {
    Messages.find()
-    .then(doc => res.json(doc) )
+    .then(doc => res.json({name: "John", age: 31, city: "New York"}) )
     .catch(err => res.status(400).json('Error: ' + err));
    
 });

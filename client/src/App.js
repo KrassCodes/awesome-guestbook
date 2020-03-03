@@ -37,12 +37,59 @@ class App extends Component {
 
 
     return (
-      <div>
-        {sender}
-        <br></br>
-        {sender2}
-
+  
+  <>
+    <div className="header-container">
+    <nav className="navbar navbar-default">
+      <div className="container-fluid">
+        <div className="navbar-header">
+          <a className="navbar-brand" >My Awesome Guestbook</a>
+        </div>
+            <ul className="nav navbar-nav navbar-right">
+                {/* <li><a href="#"><span className="glyphicon glyphicon-user"></span> {sender2}</a></li> */}
+                {/* <li><a href="#"><span className="glyphicon glyphicon-log-in"></span> Login</a></li> */}
+            </ul>
       </div>
+    </nav>
+    </div>
+
+ 
+       
+
+
+        <div className="col-sm-9  col-md-10">
+          <h2 className="sub-header">Hi {sender}, please write something!</h2>
+          <div><input type="text"></input></div>
+          <div className="table-responsive">
+            <table className="table table-striped">
+              <thead>
+                <tr>
+                  <th>From</th>
+                  <th>Mesage</th>
+                  <th>Date</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Jim</td>
+                  <td>Hi John, I wanted to reach out about the report you tweeted out. Do you have a link to it?</td>
+                  <td>01/01/2020</td>
+                  <td>Delte/Reply</td>
+                </tr>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+
+
+
+
+</>
+
 
 
     );

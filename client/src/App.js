@@ -32,7 +32,7 @@ class App extends Component {
   // }
 
   render() {
-    const { name } = this.state;
+    const { name } = this.state.name[0];
 
 
     return (

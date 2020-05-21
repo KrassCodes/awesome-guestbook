@@ -32,7 +32,7 @@ class App extends Component {
   // }
 
   render() {
-    const { name } = this.state.name;
+    const { name } = this.state;
 
 
     return (
@@ -52,7 +52,7 @@ class App extends Component {
     </nav>
     </div>
         <div className="col-sm-9  col-md-10">
-          <h2 className="sub-header">Hi there {name}, please write something!</h2>
+          <h2 className="sub-header">Hi there {name.name}, please write something!</h2>
           <div><input type="text"></input></div>
           <div className="table-responsive">
             <table className="table table-striped">

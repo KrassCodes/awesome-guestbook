@@ -3,37 +3,36 @@ import axios from 'axios';
 import './App.css';
 
 class App extends Component {
-  state = { sender: [],
+  state = { name: [],
             sender2: [] }
 
   componentDidMount() {
     this.getData();
-    this.getData2();
   }
 
   getData = () => {
     axios.get('/messages')
     .then(response => {
-      this.setState({ sender: response.data[0].sender})
+      this.setState({ name: response.data[0].name})
       console.log(response)
     })
     .catch((error) => {
       console.log(error);
     })
   }
-  getData2 = () => {
-    axios.get('/messages2')
-    .then(response2 => {
-      this.setState({ sender2: response2.data.name})
-      console.log(response2)
-    })
-    .catch((error) => {
-      console.log(error);
-    })
-  }
+  // getData2 = () => {
+  //   axios.get('/messages2')
+  //   .then(response2 => {
+  //     this.setState({ sender2: response2.data.name})
+  //     console.log(response2)
+  //   })
+  //   .catch((error) => {
+  //     console.log(error);
+  //   })
+  // }
 
   render() {
-    const { sender, sender2 } = this.state;
+    const { name } = this.state;
 
 
     return (
@@ -52,13 +51,8 @@ class App extends Component {
       </div>
     </nav>
     </div>
-
- 
-       
-
-
         <div className="col-sm-9  col-md-10">
-          <h2 className="sub-header">Hi {sender}, please write something!</h2>
+          <h2 className="sub-header">Hi there {name}, please write something!</h2>
           <div><input type="text"></input></div>
           <div className="table-responsive">
             <table className="table table-striped">
@@ -72,7 +66,7 @@ class App extends Component {
               </thead>
               <tbody>
                 <tr>
-                  <td>Jim</td>
+                  <td>{name}</td>
                   <td>Hi John, I wanted to reach out about the report you tweeted out. Do you have a link to it?</td>
                   <td>01/01/2020</td>
                   <td>Delte/Reply</td>
